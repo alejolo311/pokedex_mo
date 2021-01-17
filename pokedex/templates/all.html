@@ -15,19 +15,15 @@
     <title>Pokedex</title>
 </head>
 <body>
-  {% if ev %}
-  <h1>Evolution Chart</h1>
-  </br>
-  {% else %}
+
   <h1>Pokedex</h1>
   </br>
-  {% endif %}
   
   <div id="cards">  
     {% for pk in pokemon %}
     
     <figure class="card card--{{pk.type}}" id="myBtn">
-      <a href="/evolution-chain/{{pk.evolution}}">
+      <a href="/pokemon/{{pk.name}}">
       <div class="card__image-container">
         <img src={{pk.image}} alt="Eevee" class="card__image" width="175" height="150">   
       </div>

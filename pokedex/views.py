@@ -1,11 +1,8 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponseNotFound
+from django.http import JsonResponse
 from .models import Pokemon
-from django.shortcuts import redirect
 from django.forms.models import model_to_dict
-import json
-
 
 def json(request, name):
 
@@ -21,6 +18,10 @@ def json(request, name):
         try:
             pk = Pokemon.objects.get(name=name)
             data['pokemon'] = pk
+            if pk.prevolution:
+                data['pre'] = Pokemon.objects.get(id=pk.prevolution)
+            if pk.evolution:
+                data['ev'] = Pokemon.objects.get(id=pk.evolution)
             return render(request, 'individual.html', context=data)
         except Pokemon.DoesNotExist:
             return HttpResponse("<h1> pokemon not found </h1>", status=404)
@@ -66,11 +67,9 @@ def ev_chain(request, id):
     else:
         data = {}
         try:
-            pk = Pokemon.objects.filter(evolution=id)
+            pk = Pokemon.objects.filter(chain=id)
             data["ev"] = True
             data['pokemon'] = pk
             return render(request, 'all.html', context=data)
         except Pokemon.DoesNotExist:
             return HttpResponse("<h1> pokemon not found </h1>", status=404)
-
-
