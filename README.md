@@ -107,7 +107,7 @@ _example response_
 
 
 ```json
-{
+[
   {
     "id": 1,
     "name": "bulbasaur",
@@ -150,7 +150,7 @@ _example response_
     "prevolution": 1,
     "chain": 1
   }
-}
+]
 ```
 
 
