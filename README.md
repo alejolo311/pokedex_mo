@@ -92,8 +92,8 @@ _You can consume the web service in two ways, Json or Html and theres two possib
 
 `
 /pokemon/
-
 `
+
 _example response_
 
 <p align="center">
@@ -102,8 +102,8 @@ _example response_
 
 `
 /pokemon/?format=json
-
 `
+
 _example response_
 
 
@@ -157,8 +157,8 @@ _example response_
 
 `
 /pokemon/<name>
-
 `
+
 _example response_
 
 <p align="center">
@@ -167,8 +167,8 @@ _example response_
 
 `
 /pokemon/<name>?format=json
-
 `
+
 _example response_
 
 ```json
