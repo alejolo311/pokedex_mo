@@ -9,7 +9,7 @@ class Pokemon(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     stats = models.JSONField(blank=True, null=True)
-    evolution = models.IntegerField(blank=True, null=True)
+    evolution = models.JSONField(blank=True, null=True)
     prevolution = models.IntegerField(blank=True, null=True)
     chain = models.IntegerField()
 

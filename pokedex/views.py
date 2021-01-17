@@ -21,7 +21,9 @@ def json(request, name):
             if pk.prevolution:
                 data['pre'] = Pokemon.objects.get(id=pk.prevolution)
             if pk.evolution:
-                data['ev'] = Pokemon.objects.get(id=pk.evolution)
+                data['ev'] = []
+                for key in pk.evolution:
+                    data['ev'].append(Pokemon.objects.get(id=pk.evolution[key]))
             return render(request, 'individual.html', context=data)
         except Pokemon.DoesNotExist:
             return HttpResponse("<h1> pokemon not found </h1>", status=404)
