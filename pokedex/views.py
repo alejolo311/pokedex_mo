@@ -20,8 +20,6 @@ def json(request, name):
         data = {}
         try:
             pk = Pokemon.objects.get(name=name)
-            ev = Pokemon.objects.filter(evolves_from=pk.id)
-            data['ev'] = ev
             data['pokemon'] = pk
             return render(request, 'individual.html', context=data)
         except Pokemon.DoesNotExist:
