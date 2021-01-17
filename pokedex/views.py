@@ -55,7 +55,7 @@ def ev_chain(request, id):
     format = request.GET["format"] if 'format' in request.GET else None
     if format == "json":
         try:
-            pk = Pokemon.objects.get(evolution=id)
+            pk = Pokemon.objects.filter(evolution=id)
         except Pokemon.DoesNotExist:
             return JsonResponse({"error": "pokemon not found"}, status=404)
         pkms = []
