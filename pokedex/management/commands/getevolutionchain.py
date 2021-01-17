@@ -65,13 +65,19 @@ def getPokemon(pok):
     stats = {}
     for stat in pokemon['stats']:
         stat_name = stat['stat']['name']
+        if stat_name == "special-attack":
+            stat_name = "sattack"
+        if stat_name == "special-defense":
+            stat_name = "sdefense"
         stats[stat_name] = stat['base_stat']
 
     pk = {
         'id': pokemon['id'],
         'name': pokemon['name'],
+        'type': pokemon["types"][0]["type"]["name"],
         'height': pokemon['height'],
         'weight': pokemon['weight'],
+        'image': pokemon['sprites']['front_default'] if pokemon['sprites']['front_default'] is not None else pokemon['sprites']['back_default'],
         'stats': stats
     }
     return(pk)
