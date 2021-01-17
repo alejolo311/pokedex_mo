@@ -38,10 +38,7 @@ def getChain(self, id):
 
     for pokemon in self.poke_id:
         pk = getPokemon(pokemon["id"])
-        if pokemon["pre"]:
-            pk["evolves_from"] = Pokemon.objects.get(id=pokemon["pre"])
-        else:
-            pk["evolves_from"] = None
+        pk["evolution"] = id
         Pokemon(**pk).save()
 
     return True

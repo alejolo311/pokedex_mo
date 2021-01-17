@@ -9,7 +9,7 @@ class Pokemon(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     stats = models.JSONField(blank=True, null=True)
-    evolves_from = models.ForeignKey("self", blank=True, null=True, on_delete=models.DO_NOTHING)
+    evolution = models.IntegerField()
 
     def __str__(self):
         return str(self.name)
