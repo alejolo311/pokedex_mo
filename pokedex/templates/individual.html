@@ -17,6 +17,7 @@
   <div id="cards"> 
     {% if pre %}
     <figure class="card card--{{pre.type}}">
+      <a href="/pokemon/{{pk.name}}">
       <div class="card__image-container">
         <img src={{pre.image}} alt="Eevee" class="card__image" width="175" height="150">   
       </div>
@@ -67,6 +68,7 @@
           </h4>
         </div>
       </figcaption>
+    </a>
     </figure>
     <img src={% static 'pre-evolution.png' %} alt="Eevee"  width="150" style="margin-bottom: 350px;">
     {% endif %}
@@ -127,6 +129,7 @@
     <img src={% static 'evolution.png' %} alt="Eevee" class="card__image" width="150"  style="margin-bottom: 350px;">
     {% for e in ev %}
     <figure class="card card--{{e.type}}">
+      <a href="/pokemon/{{pk.name}}">
       <div class="card__image-container">
         <img src={{e.image}} alt="Eeee" class="card__image" width="175" height="150">   
       </div>
@@ -177,6 +180,7 @@
           </h4>
         </div>
       </figcaption>
+    </a>
     </figure>
     {% endfor %}
     {% endif %}
