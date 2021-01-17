@@ -46,9 +46,9 @@ def getChain(self, id):
     for pokemon in pokemons:
         try:
             ev = Pokemon.objects.filter(prevolution=pokemon.id)
-            evs = {}
+            evs = []
             for e in ev:
-                evs[e.name] = e.id
+                evs.append(e.id)
         except Pokemon.DoesNotExist:
             evs = None
         pokemon.evolution = evs

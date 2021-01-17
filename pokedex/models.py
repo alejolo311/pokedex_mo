@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Pokemon(models.Model):
@@ -9,7 +10,10 @@ class Pokemon(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     stats = models.JSONField(blank=True, null=True)
-    evolution = models.JSONField(blank=True, null=True)
+    evolution = ArrayField(
+        models.IntegerField(blank=True, null=True),
+        size=8, blank=True, null=True
+    )
     prevolution = models.IntegerField(blank=True, null=True)
     chain = models.IntegerField()
 
