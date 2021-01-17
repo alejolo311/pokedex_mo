@@ -96,7 +96,7 @@ _You can consume the web service in two ways, Json or Html and theres two possib
 _example response_
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/alejolo311/pokedex_mo/main/images/example_html.png" alt="Sublime's custom image" style="max-width: 500px"/>
+  <img src="https://user-images.githubusercontent.com/55110006/104851125-0f168a80-58c1-11eb-91ae-823632866d81.png" alt="Sublime's custom image" style="max-width: 500px"/>
 </p>
 
 `
@@ -159,7 +159,7 @@ _example response_
 _example response_
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/alejolo311/pokedex_mo/main/images/example_html_i.png" alt="Sublime's custom image" style="max-width: 500px"/>
+  <img src="https://user-images.githubusercontent.com/55110006/104851132-16d62f00-58c1-11eb-9b37-0c98d9c65e63.png" alt="Sublime's custom image" style="max-width: 500px"/>
 </p>
 
 `
