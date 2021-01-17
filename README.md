@@ -42,7 +42,7 @@ requests
 _Create And start a virtual Enviroment._
 
 `
-python -m venv env
+python -m venv env &&
 source env/bin/activate
 `
 
